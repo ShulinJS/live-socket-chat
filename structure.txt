@@ -1,0 +1,17 @@
+[base structure]
+
+1. frontend 
+2. backend
+3. database (questionable)
+
+
+[purpose] - real time chat application to facilitate communication with the help of texts and images
+
+
+[features]
+1. profile
+2. group chat
+3. direct chat
+
+
+
