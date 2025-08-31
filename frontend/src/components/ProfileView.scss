@@ -14,18 +14,18 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        height: fit-content;
+        height: fit-con tent;
         width: fit-content;
 
         margin-top: 35px;
         margin-bottom: 20px;
-        
+
         .avatar-current {
             margin-bottom: 25px;
 
             img {
-                width: 170px;
-                height: 170px;
+                width: 150px;
+                height: 150px;
                 border-radius: 100vh;
                 background-color: rgba(0, 0, 0, 0.2);
             }
@@ -42,9 +42,10 @@
                 height: 35px;
                 border-radius: .5vh;
                 background-color: rgba(0, 0, 0, 0.2);
+                cursor: pointer;
             }
 
-            .active-avatar {
+            .avatar.active {
                 outline: 1px solid #71aaff7e;
             }
         }
@@ -68,21 +69,22 @@
                 margin-bottom: 5px;
                 margin-left: 3px;
             }
-            
+
             input {
                 background-color: #1C3150;
                 color: #A6CAFF;
                 width: 280px;
                 height: 35px;
                 box-sizing: border-box;
-                outline: none; border: none;
+                outline: none;
+                border: none;
                 padding: 0 12px;
                 letter-spacing: 1px;
                 font-weight: 500;
                 border-radius: 4px;
                 margin-bottom: 10px;
             }
-    
+
             img {
                 width: 15px;
                 position: absolute;
@@ -94,5 +96,46 @@
         }
 
     }
-    
+
+
+
+
+
+    .btns-container {
+        width: 280px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 12px;
+        column-gap: 12px;
+
+        margin-top: 10px;
+
+        button {
+            outline: none;
+            border: none;
+            height: 30px;
+            border-radius: 3px;
+            font-size: .75rem;
+            font-weight: 150;
+            letter-spacing: .5px;
+            color: white;
+        }
+
+
+        #save-btn {
+            background-color: #223B60;
+        }
+        
+        #cancel-btn {
+            background-color: #1E2B3F;
+        }
+        
+        #signout-btn {
+            background-color: #683333;
+            grid-column: 1 / span 2;
+        }
+    }
+
 }
+
