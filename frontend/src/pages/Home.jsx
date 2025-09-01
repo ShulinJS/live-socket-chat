@@ -4,6 +4,7 @@ import { useState } from "react"
 // import MessageComp from "../components/MessageComp"
 import ChatView from "../components/ChatView"
 import ProfileView from "../components/ProfileView"
+import RoomView from "../components/RoomView"
 
 function Home() {
   const [slider, setSlider] = useState("GENERAL")
@@ -24,8 +25,8 @@ function Home() {
         </div>
 
         <div className="container">
-          <ProfileView />
-          {/* <ChatView type={slider}/> */}
+          {/* <ProfileView /> */}
+          <ChatView type={slider}/>
         </div>
 
       </div>

@@ -1,0 +1,125 @@
+.room-view {
+    // background-color: #0D1827;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 100%;
+    height: 1;
+
+
+    .connect-container {
+        background-color: #0A1422;
+        width: 100%;
+        // height: 35px;
+        // display: flex;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        
+        .connect-wrapper {
+            width: 100%;
+            display: flex;
+            position: relative;
+
+            span {
+                color: #536E91;
+                width: 50%;
+                height: 22px;
+                font-size: .7rem;
+                letter-spacing: 1.5px;
+                font-weight: 350;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10;
+                transition: 500ms;
+            }.slider {
+                position: absolute;
+                width: 50%;
+                background-color: #152233;
+                border-radius: 3px;
+            }.JOIN {
+                width: 50%;
+                margin-left: 50%;
+            }
+        }
+    }
+
+
+
+
+
+    .context-container {
+        background-color: #0D1827;
+        margin-top: 12px;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 7px;
+
+
+        .ctx-head {
+            color: #6A8BB7;
+            font-size: 1.7rem;
+            font-weight: 310;
+            letter-spacing: 3px;
+            margin-top: 20px;
+            margin-bottom: 22px;
+        }
+
+        .ctx-span {
+            color: #536E91;
+            font-size: .75rem;
+            letter-spacing: 1px;
+
+            .ctx-span-greyed {
+                color: #374250;
+            }
+        }
+
+
+        .ctx-input {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            span {
+                margin-bottom: 5px;
+                margin-left: 3px;
+            }
+
+            input {
+                background-color: #1C304B;
+                color: #A6CAFF;
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                box-sizing: border-box;
+                padding: 0 10px;
+                width: 280px;
+                height: 35px;
+            }
+        }.start {
+            width: 280px;
+        }
+
+        
+
+
+        button {
+            background-color: #1C304B;
+            color: #83A6D4;
+            outline: none;
+            border: none;
+            border-radius: 4px;
+            padding: 9px 17px;
+            font-size: .8rem;
+            font-weight: 250;
+            letter-spacing: 2px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    }
+}
