@@ -17,7 +17,7 @@ function CreateView(props) {
                 <span className="ctx-span">RoomID: <span className="ctx-span-greyed">unassigned</span></span>
             </div>
 
-            <button onClick={() => {props.setIsChatActive(true)}}>CREATE</button>
+            <button onClick={() => {props.setRoomStatus(true)}}>CREATE</button>
         </>
     )
 }
@@ -61,7 +61,7 @@ function RoomChat() {
                         data={{
                             username: <span style={{ color: "#FF8688" }}>Server</span>,
                             avatar: "server",
-                            message: `Hello, Shulin! Enter /info in chat to list details about this room`
+                            message: <span>Hello, Shulin! <br />Enter <span style={{color: "#acacacff"}}>/info</span> in chat to list details about this room</span>
                         }}
                     />
                     <MessageComp
@@ -127,26 +127,41 @@ function RoomChat() {
 
 function RoomView() {
     const [slider, setSlider] = useState("CREATE")
-    const [isChatActive, setIsChatActive] = useState(false)
+    const [roomStatus, setRoomStatus] = useState(false)
 
     return (
         <div className="room-view">
             <div className="connect-container">
                 <div className="connect-wrapper">
-                    <span className={`slider ${slider}`}></span>
-                    <span onClick={() => { setSlider("CREATE") }}>CREATE</span>
-                    <span onClick={() => { setSlider("JOIN") }}>JOIN</span>
+                    {
+                        roomStatus ? (
+                            <div className="connect-wrapper-active">
+                                <span onClick={() => {setRoomStatus(false)}}>LEAVE <img src="leave.png" alt="leave icon" /></span>
+                            </div>
+                        ) : (
+                            <>
+                                <span className={`slider ${slider}`}></span>
+                                <span onClick={() => { setSlider("CREATE") }}>CREATE</span>
+                                <span onClick={() => { setSlider("JOIN") }}>JOIN</span>
+                            </>
+                        )
+                    }
                 </div>
             </div>
 
-            <div className="context-container">
-                {
-                    slider === "JOIN" ? <JoinView /> : <CreateView setIsChatActive={setIsChatActive}/>
-                }
-                {/* {
-                    isChatActive ? <RoomChat /> : ""
-                } */}
-            </div>
+            {
+                roomStatus ? (
+                    <div className="context-container active">
+                        <RoomChat />
+                    </div>
+                ) : (
+                    <div className="context-container">
+                        {
+                            slider === "JOIN" ? <JoinView /> : <CreateView setRoomStatus={setRoomStatus}/>
+                        }
+                    </div>
+                )
+            }
         </div>
     )
 }

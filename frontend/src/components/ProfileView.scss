@@ -22,10 +22,14 @@
 
         .avatar-current {
             margin-bottom: 25px;
+            // width: 150px;
+            // height: 150px;
 
             img {
                 width: 150px;
                 height: 150px;
+                // object-fit: cover;
+                // object-position: 0 0px;
                 border-radius: 100vh;
                 background-color: rgba(0, 0, 0, 0.2);
             }

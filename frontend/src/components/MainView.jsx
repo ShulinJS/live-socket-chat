@@ -1,7 +1,7 @@
 import MessageComp from "./MessageComp"
 import RoomView from "./RoomView"
 
-import "./ChatView.scss"
+import "./Chat.scss"
 
 function GeneralChat() {
     return (
@@ -25,6 +25,7 @@ function GeneralChat() {
                 </div>
             </div>
             <input type="text" placeholder="Message #GENERAL" className="chat-input" />
+            {/* <textarea className="chat-input" style={{resize: "none"}} placeholder="Message #GENERAL" ></textarea> */}
         </>
     )
 }
@@ -34,7 +35,7 @@ function GeneralChat() {
 
 
 
-function ChatView(props) {
+function MainView(props) {
     return (
         <>
             {props.type === "ROOM" ? <RoomView /> : <GeneralChat />}
@@ -42,4 +43,4 @@ function ChatView(props) {
     )
 }
 
-export default ChatView
+export default MainView
